@@ -1,0 +1,447 @@
+:root {
+    --main-color: #00c9a5;
+    --nav-color: #00afa5;
+    --bg-color: #fff4e6;
+    --black: #2f4858;
+    --card-color: #c0dbea;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 2rem bisque;
+}
+*{
+    margin:0;
+    padding:0;
+    outline: 0;
+    appearance: none;
+    border:none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    font-size: 14px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    background: var(--bg-color);  /*màu nền*/
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--black);
+}
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    background: var(--bg-color); /*màu nền phần nội dung*/
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+a{
+    color: var(--black);
+}
+p{
+    color: var(--black);
+}
+img{
+    display: block;
+    width: 100%;
+}
+.Logo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.pending{
+    color: yellow;
+}
+.success{
+    color: green;
+}
+.unsuccess{
+    color: red;
+}
+aside{
+    height: 100vh;
+    background-color: var(--bg-color); /*màu nền aside*/
+}
+aside .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+aside .logo{
+    display: flex;
+    gap: 0.8rem;
+}
+aside .logo img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+aside .close{
+    display: none;
+}
+
+/* === SIDEBAR === */
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+aside .sidebar a{
+    display: flex;
+    color: var(--black);
+    margin-left: 0.5rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+    padding: var(--card-padding);
+}
+aside .sidebar a:last-child{ /* đặt đăng xuất cuối trang*/
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+aside .sidebar a:hover{
+    background: bisque;
+    border-radius: var(--border-radius-1);
+}
+aside .sidebar a:active{
+    color: #00afa5;
+}
+aside .sidebar .message-count{
+    background-color: red;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* ====== MAIN ====== */
+main{
+    margin-top: 1.4rem;
+}
+/* Form Container */
+.form-container {
+    background: var(--card-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+/* Căn chỉnh các cặp dữ liệu trong form */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Khoảng cách giữa các cột */
+    margin-bottom: 1rem;
+}
+/* Mỗi cột trong hàng */
+.row > div {
+    flex: 1; /* Mỗi cột có chiều rộng bằng nhau */
+}
+.smallrow{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.smallrow > div{
+    width: 32%;
+}
+
+.add-user-form label {
+    display: block;
+    margin: 0 0 0.5rem;
+    color: var(--black);
+    font-weight: bold;
+}
+.add-user-form input[type="text"],
+.add-user-form input[type="email"],
+.add-user-form input[type="tel"]{
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: var(--border-radius-1);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+}
+.submit-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: var(--border-radius-1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+.submit-btn:hover {
+    background-color: var(--nav-color);
+}
+/* PHẦN POPUP */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius-2);
+    box-shadow: 0 2rem 2rem var(--black);
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Ẩn mặc định */
+  }
+  .popup p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .popup button {
+    padding: 0.6rem 1rem;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+  }
+  .popup button:hover {
+    background: var(--nav-color);
+  }
+  .popup.hidden {
+    display: none; /* Lớp ẩn */
+  }
+  .popup.visible {
+    display: block; /* Hiển thị popup */
+  }
+
+/* ====== RIGHT ====== */
+.right{
+    margin-top: 1.4rem;
+}
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+.right .top button{
+    display: none;
+}
+.right .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+.right .profile-photo img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+/* ====== TOOLS ====== */
+.right .tools{
+    margin-top: 2rem;
+}
+.right .tools h2{
+    margin-bottom: 0.8rem;
+}
+.right .tools .item{
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+.right .tools .item:hover{
+    box-shadow: none;
+}
+.right .tools .item .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+.right .tools .item .icon{
+    padding: 0.6rem;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+}
+.right .tools .item.add .icon{
+    background-color: cornflowerblue;
+}
+
+/* ====== MEDIA QUERIES ======*/
+@media screen and (max-width: 1200px){   /* màn hình tương thích laptop tablet*/
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+    .container .logo h1{
+        display: none;
+    }
+    aside .logo h2{
+        display: none;
+    }
+    aside .sidebar h3{
+        display: none;
+    }
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px){   /* màn hình tương thích điện thoại*/
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    aside{
+        position: fixed;
+        left: -100%;
+        background: white;
+        width: 18rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem bisque;
+        height: 100vh;
+        padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+    aside .logo{
+        margin-left: 1rem;
+    }
+    aside .logo h2{
+        display: inline;
+    }
+    aside .sidebar h3{
+        display: inline;
+    }
+    aside .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    aside .sidebar a:last-child{
+        position: absolute;
+        bottom: 5rem;;
+    }
+    aside .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* Phần Main */
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+    
+    /* Form Container */
+.form-container {
+    background: var(--card-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.add-user-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.add-user-form input[type="text"],
+.add-user-form input[type="email"],
+.add-user-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: var(--border-radius-1);
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: var(--border-radius-1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--nav-color);
+}
+
+    /* Phần right */
+    .right{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+    .right .top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: white;
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem bisque;
+    }
+    .right .profile .info{
+        display: none;
+    }
+    .right .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--black);
+        position: absolute;
+        left: 1rem;
+    }
+    .right .top button i{
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --bg-color: #ead376;
+    --primary-color: #2f2929;
+    --secondary-color: #5265a7;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+}
+body{
+    background: var(--bg-color);
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--primary-color);
+    padding: 0 20px;
+}
+.invoice{
+    background: #fff;
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto; 
+    padding: 50px 60px;
+}
+.p_title{
+    font-weight: 700;
+    font-size: 14px;
+}
+.i_row{
+    display: flex;
+}
+.text_right{
+    text-align: right;
+}
+.invoice .header .i_row{
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.invoice .header .i_row:last-child{
+    align-items: flex-end;
+}
+.invoice .header .i_logo p{
+    font-family: "Noto Serif Display", cursive;
+}
+.invoice .header .i_logo p,
+.invoice .header .i_title h2{
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--secondary-color);
+}
+.invoice .header .i_address .p_title span{
+    font-size: 12px;
+    font-weight: 400;
+}
+/*BODY*/
+.invoice .body .i_table p{
+    font-weight: 700;
+}
+.invoice .body .i_table .i_col{
+    padding: 12px 5px;
+}
+.invoice .body .i_table_head .i_row{ /* Đóng khung dòng stt, sp, sl, g, t */
+    border: 2px solid var(--primary-color);
+    border-left: 0px;
+    border-right: 0;
+}
+.invoice .body .i_table_body .i_row:last-child{
+    border-bottom: 2px solid var(--primary-color);
+}
+.invoice .body .i_table_body img{
+    height: 3rem;
+    width: auto;
+}
+.invoice .body .i_table_foot .grand_total_wrap{
+    margin-top: 20px;
+}
+.invoice .body .i_table_foot .grand_total_wrap .grand_total{
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 10px 15px;
+}
+.w_15{
+    width: 25%;
+}
+.w_40{
+    width: 40%;
+}
+.w_50{
+    width: 50%;
+}
+.invoice .body .i_table_foot .grand_total_wrap .grand_total p{
+    display: flex;
+    justify-content: space-between;
+}
+.invoice .footer{
+    margin-top: 30px;
+}
