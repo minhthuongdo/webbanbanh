@@ -1,0 +1,221 @@
+
+:root {
+  --main-color: #00c9a5;
+  --nav-color: #00afa5;
+  --bg-color: #fff4e6;
+  --black: #2f4858;
+  --card-color: #c0dbea;
+  --border: 0.1rem solid var(--card-color);
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    border:none;
+    outline:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.5s ease-in;
+    /*scroll-behavior:smooth;*/
+    scroll-padding: 16vh;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    background-color: var(--bg-color);
+}
+section{
+  padding: 1.5rem 7%
+  
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--main-color);
+  color:#fff;
+  font-size: 1.7rem;
+  padding: 0.8rem 2.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.btn:hover {
+  letter-spacing: 0.5rem;
+}
+.title {
+  text-shadow: 2px 2px 0 var(--card-color),  -2px -2px 0 var(--card-color),  
+    -2px 2px 0 var(--card-color),  2px -2px 0 var(--card-color);
+  text-align: center;
+  color:#fff;
+  padding-bottom: 2.5rem;
+  font-size: 4rem;
+}
+
+.home .title {
+  display: none;
+}
+.title span {
+  color: var(--main-color);
+}/*info-cake*/
+.form .container{
+  display: flex;
+  justify-content: center;
+  background-color: var(--black);
+  flex-wrap: wrap;
+
+}
+.form .container .img{
+  flex: 1 1 45rem;
+
+}
+.form .container .img img{
+  width: 100%;
+  height: 5%S;
+}
+.form .container .content{
+  flex: 1 1 45rem;
+  padding: 2rem;
+}
+.form .container .content .price {
+  font-size: 2rem;
+  color: var(--main-color);
+  padding-left: 24px;
+}
+.form .container .content p{
+  font-size: 2rem;
+  color: #fff;
+  padding: 1rem 0;
+  line-height: 2.2rem;
+
+}
+  .form .container .content .quantity-selector{
+    display: flex;
+        align-items: center;
+
+  }
+.form .container .content .quantity-selector button{
+    width: 30px;
+    height: 30px;
+    background-color: var(nav-color); /* Green background color */
+    color: black;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form .container .content .quantity-selector input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9; /* Light gray background */
+  margin: 0 5px;
+}
+.form .container .content .quantity-selector button:hover {
+  background-color: #00afa5; /* Darker green on hover */
+}
+
+/* Media Queries for Small Devices and Mobile Devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    align-items: center;
+  }
+  .title {
+    font-size: 3rem;
+  }
+
+  .form .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .form .container .content {
+    flex: 1 1 100%;
+    padding: 1rem;
+  }
+  .form .container .img {
+    width:650px;
+  }
+  .form .container .content .price {
+    padding-left: 15px;
+    font-size: 2.5rem;
+  }
+
+  .form .container .content p {
+    font-size: 1.6rem;
+  }
+
+  .form .container .content .quantity-selector button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+  }
+
+  .form .container .content .quantity-selector input {
+    width: 40px;
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.7rem 2rem;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .form .container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .form .container .img {
+    width:350px;
+
+  }
+  .form .container .content {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+    padding-top: 50px;
+  }
+
+  .form .container .content .price {
+    font-size: 1.6rem;
+  }
+
+  .form .container .content p {
+    font-size: 1.4rem;
+  }
+
+  .form .container .content .quantity-selector button {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+
+  .form .container .content .quantity-selector input {
+    width: 35px;
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.8rem;
+    margin-left: 0;
+  }
+}
